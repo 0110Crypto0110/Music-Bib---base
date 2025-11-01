@@ -20,17 +20,19 @@ A Mini Biblioteca de Músicas é um aplicativo de linha de comando (CLI) que pos
 
 ## 🏗️ Estrutura do Projeto
 
+```text
 src/
- ├── app/
- │    └── Main.java                # CLI e controle de autenticação
- ├── model/
- │    ├── Musica.java              # Entidade música (UUID + atributos privados)
- │    └── Usuario.java             # Entidade usuário
- ├── repository/
- │    ├── BibliotecaMusical.java   # CRUD + integração com persistência
- │    └── UsuarioRepository.java   # Cadastro e autenticação de usuários
- └── persistence/
-      └── FileStorage.java         # Persistência de músicas em arquivo CSV
+├── app/
+│   └── Main.java             # CLI e controle de autenticação
+├── model/
+│   ├── Musica.java           # Entidade música (UUID + atributos privados)
+│   └── Usuario.java          # Entidade usuário
+├── repository/
+│   ├── BibliotecaMusical.java  # CRUD + integração com persistência
+│   └── UsuarioRepository.java  # Cadastro e autenticação de usuários
+└── persistence/
+    └── FileStorage.java        # Persistência de músicas em arquivo CSV
+```
 
 ## ⚙️ Tecnologias Utilizadas
 
