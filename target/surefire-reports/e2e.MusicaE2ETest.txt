@@ -1,0 +1,19 @@
+-------------------------------------------------------------------------------
+Test set: e2e.MusicaE2ETest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 31.49 s <<< FAILURE! -- in e2e.MusicaE2ETest
+e2e.MusicaE2ETest.testScenario_AddAndRemoveMusicaSuccessfully -- Time elapsed: 15.43 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+[A música 'Musica Remover 91d3' deve ser encontrada após a adição.] 
+Expecting:
+ <false>
+to be equal to:
+ <true>
+but was not.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at e2e.MusicaE2ETest.testScenario_AddAndRemoveMusicaSuccessfully(MusicaE2ETest.java:158)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+
