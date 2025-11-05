@@ -76,8 +76,10 @@ O sistema carrega os dados na inicialização e salva após cada modificação.
 
 ## para rodar o app manualmente 
 
-o programa MainView.java para ver a interface grafica.
+O programa MainView.java para utilizar a interface grafica.
+
+    mvn exec:java -Dexec.mainClass="app.MainView"
 
 ## para rodar teste de unidade e automacao
 
-mvn clean compile test
+    mvn clean compile test
