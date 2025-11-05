@@ -73,3 +73,11 @@ Cada música é armazenada como linha no arquivo musicas.csv.
 O formato é delimitado por ; e escapa \n e ; automaticamente.
 
 O sistema carrega os dados na inicialização e salva após cada modificação.
+
+## para rodar o app manualmente 
+
+o programa MainView.java para ver a interface grafica.
+
+## para rodar teste de unidade e automacao
+
+mvn clean compile test
