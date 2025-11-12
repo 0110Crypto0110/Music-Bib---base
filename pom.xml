@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.com.musicbib</groupId>
@@ -20,17 +20,11 @@
     <junit.jupiter.version>5.10.1</junit.jupiter.version>
     <mockito.version>5.8.0</mockito.version>
     <assertj-swing.version>3.17.1</assertj-swing.version>
-
-    <!-- JaCoCo -->
     <jacoco.version>0.8.12</jacoco.version>
-
-    <!-- Sonar -->
-    <sonar.projectKey>br.com.musicbib:music-bib-stb</sonar.projectKey>
-    <sonar.organization>musicbib</sonar.organization>
   </properties>
 
   <dependencies>
-    <!-- JUnit -->
+    <!-- JUnit 5 -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
@@ -85,18 +79,20 @@
         </configuration>
       </plugin>
 
-      <!-- Plugin JaCoCo para gerar cobertura -->
+      <!-- JaCoCo: cobertura + relatório HTML por pacote -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>${jacoco.version}</version>
         <executions>
+          <!-- Instrumentação antes dos testes -->
           <execution>
             <id>prepare-agent</id>
             <goals>
               <goal>prepare-agent</goal>
             </goals>
           </execution>
+          <!-- Geração do relatório HTML por pacote -->
           <execution>
             <id>report</id>
             <phase>verify</phase>
@@ -114,7 +110,7 @@
         <version>3.10.0.2594</version>
       </plugin>
 
-      <!-- PLUGIN EXEC PARA RODAR A GUI -->
+      <!-- Execução da GUI -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
