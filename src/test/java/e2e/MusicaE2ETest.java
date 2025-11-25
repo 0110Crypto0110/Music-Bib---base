@@ -181,7 +181,8 @@ public class MusicaE2ETest {
 		confirmDialog.button(new GenericTypeMatcher<JButton>(JButton.class) {
 			@Override
 			protected boolean isMatching(JButton button) {
-				return "Sim".equals(button.getText()); 
+				String t = button.getText();
+				return "Sim".equals(t) || "Yes".equals(t); 
 			}
 		}).click();
 
@@ -265,7 +266,8 @@ public class MusicaE2ETest {
 		confirmDialog.button(new GenericTypeMatcher<JButton>(JButton.class) {
 			@Override
 			protected boolean isMatching(JButton button) {
-				return "Sim".equals(button.getText()); 
+				String t = button.getText();
+				return "Sim".equals(t) || "Yes".equals(t); 
 			}
 		}).click();
 		confirmSuccessDialog();

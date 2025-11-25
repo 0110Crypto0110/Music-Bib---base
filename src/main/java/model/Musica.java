@@ -1,5 +1,5 @@
 package model;
-
+import exception.RegraNegocioException;
 import java.util.UUID;
 
 /**
@@ -36,14 +36,14 @@ public class Musica {
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) {
         if (titulo == null || titulo.isBlank())
-            throw new IllegalArgumentException("Título não pode ser vazio.");
+            throw new RegraNegocioException("TITULO não pode ser vazio.");
         this.titulo = titulo.trim();
     }
 
     public String getArtista() { return artista; }
     public void setArtista(String artista) {
         if (artista == null || artista.isBlank())
-            throw new IllegalArgumentException("Artista não pode ser vazio.");
+            throw new RegraNegocioException("ARTISTA não pode ser vazio.");
         this.artista = artista.trim();
     }
 
@@ -60,7 +60,7 @@ public class Musica {
     public int getDuracaoSegundos() { return duracaoSegundos; }
     public void setDuracaoSegundos(int duracaoSegundos) {
         if (duracaoSegundos <= 0)
-            throw new IllegalArgumentException("Duração deve ser maior que zero.");
+            throw new RegraNegocioException("DURAÇÃO deve ser maior que zero.");
         this.duracaoSegundos = duracaoSegundos;
     }
 

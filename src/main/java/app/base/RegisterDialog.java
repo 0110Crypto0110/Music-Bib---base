@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import exception.RegraNegocioException;
 import model.Usuario;
 import repository.UsuarioRepository;
 
@@ -111,8 +112,11 @@ public class RegisterDialog extends JDialog {
             } else {
                 JOptionPane.showMessageDialog(this, "Não foi possível registrar o usuário.", "Erro Desconhecido", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (IllegalArgumentException ex) {
-            JOptionPane.showMessageDialog(this, "Erro: " + ex.getMessage(), "Erro de Dados", JOptionPane.ERROR_MESSAGE);
+        } catch (RegraNegocioException ex) {
+            JOptionPane.showMessageDialog(this, "Um erro foi identificado: " + ex.getMessage(), "Erro de Dados", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+                    // exceção para outros tipos de erro
+                    JOptionPane.showMessageDialog(this, "Erro inesperado: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);                                          
         }
     }
 }

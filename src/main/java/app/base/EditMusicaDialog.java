@@ -4,6 +4,9 @@ import model.Musica;
 import repository.BibliotecaMusical;
 
 import javax.swing.*;
+
+import exception.RegraNegocioException;
+
 import java.awt.*;
 
 /**
@@ -113,8 +116,11 @@ public class EditMusicaDialog extends BaseDialog {
             } else {
                 showMessage("Falha ao editar música. ID não encontrado ou erro de dados.", "Erro", JOptionPane.ERROR_MESSAGE);
             }
-        } catch (IllegalArgumentException ex) {
-            showMessage("Erro: " + ex.getMessage(), "Erro de Dados", JOptionPane.ERROR_MESSAGE);
+        } catch (RegraNegocioException ex) {
+            showMessage("Um erro foi identificado: " + ex.getMessage(), "Erro de Dados", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception ex) {
+                    // exceção para outros tipos de erro
+                    showMessage("Erro inesperado: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
 

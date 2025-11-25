@@ -18,7 +18,7 @@ import model.Musica;
 public class FileStorage {
 
     private static final String CAMINHO_PADRAO =
-            "C:\\Users\\Strange brick\\OneDrive\\Desktop\\Music-Bib---base-main\\mb.stb\\musicas.csv";
+            System.getProperty("user.home") + "/musicas.csv";
 
     private final Path arquivo;
 
